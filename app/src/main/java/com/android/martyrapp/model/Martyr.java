@@ -1,53 +1,25 @@
 package com.android.martyrapp.model;
 
-import java.io.Serializable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 /**
- * Created by Lincoln on 15/01/16.
+ * Created by rgundal on 11/6/2017.
  */
-public class Martyr implements Serializable{
-    private String title, genre, year, imageName;
 
-    public Martyr() {
+public class Martyr {
+
+
+    @SerializedName("martyr")
+    @Expose
+    private List<MartyrPojo> martyr = null;
+
+    public List<MartyrPojo> getMartyr() {
+        return martyr;
     }
 
-    public Martyr(String title, String genre, String year,String imageName) {
-        this.title = title;
-        this.genre = genre;
-        this.year = year;
-        this.imageName = imageName;
-
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String name) {
-        this.title = name;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setMartyr(List<MartyrPojo> martyr) {
+        this.martyr = martyr;
     }
 }
